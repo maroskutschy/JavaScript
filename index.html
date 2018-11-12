@@ -40,16 +40,53 @@
         // }
         // console.log("Console Log");
 
-        let playerName;
-        let playerAge;
-        alert("Hello warrior!")
-        playerAge = prompt("How old are you, warrior?")
-        if (playerAge > 18) {
-            playerInput = prompt("What is your name ?");
-            console.log(playerInput);
+        // let playerName;
+        // let playerAge;
+        // alert("Hello warrior!")
+        // playerAge = prompt("How old are you, warrior?")
+        // if (playerAge > 18) {
+        //     playerInput = prompt("What is your name ?");
+        //     console.log(playerInput);
+        // } else {
+        //     alert("Sorry warrior, you are too young for this adventure!");
+        // }
+
+        let lumber = 0;
+        let brick = 0;
+        let wool = 0;
+        let grain = 0;
+        let ore = 0;
+        let name;
+        let color;
+        let round = 1;
+        let victoryPoints =5;
+        let roads = 4;
+        let cityTokens = 15;
+
+        //let isGameOver;
+
+        name = prompt("What is your name?");
+        color = prompt("What is your color?");
+        if (victoryPoints > 9) {
+            alert("Game is over");
         } else {
-            alert("Sorry warrior, you are too young for this adventure!");
+            alert("Game is not over yet");
         }
+        console.log ("lumber = " + lumber + ", brick = " + brick + ", wool = " + wool + 
+        ", grain = " + grain + ", ore = " + ore + ", name = " + name + ", color = " + color + 
+        ", round = " + round + ", victory points = " + victoryPoints + ", roads = " + roads +
+        ", city tokens = " + cityTokens);
+
+
+
+
+
+
+
+
+
+
+
 
         
         
