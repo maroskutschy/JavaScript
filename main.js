@@ -117,7 +117,12 @@ You have: ${playerResources_lumber} x lumber, ${playerResources_brick} x brick, 
 Your tokens: ${playerTokens_city} x city(s) ${playerTokens_settlement} x settlements and ${playerTokens_road} x road(s)
 Victory points: ${playerVictoryPoints}
 `);
-getDicesRoll();
+
+
+
+let pets = ['dog', 'cat'];
+
+// getDicesRoll();
 
 //Simulates 2 Dice Rolls, result between 2 - 12
 // function getDicesRoll() {
@@ -134,21 +139,21 @@ getDicesRoll();
  
 //  }
 
-function getDicesRoll() {
+// function getDicesRoll() {
 
-    //1. dice
-    let firstDiceRoll = Math.floor(Math.random()*6 ) + 1;
-    console.log("First Dice Roll: " + firstDiceRoll);
+//     //1. dice
+//     let firstDiceRoll = Math.floor(Math.random()*6 ) + 1;
+//     console.log("First Dice Roll: " + firstDiceRoll);
  
-    //2. dice
-    let secondDiceRoll = Math.floor(Math.random()*6 ) + 1;
-    console.log("Second Dice Roll: " + secondDiceRoll);
+//     //2. dice
+//     let secondDiceRoll = Math.floor(Math.random()*6 ) + 1;
+//     console.log("Second Dice Roll: " + secondDiceRoll);
  
-    return firstDiceRoll + secondDiceRoll;
+//     return firstDiceRoll + secondDiceRoll;
  
- }
+//  }
 
- let myArray = ["a", "b", "c"];
+ let myArray = ["a", "b", "c", "d" ];
  myArray.push("d");
  myArray.pop();
  myArray.slice(1,2);
@@ -156,46 +161,98 @@ function getDicesRoll() {
  for (let i = 0; i < myArray.length; i++) {
      console.log(myArray[i]);
  }
-//object
- let player = {
-    name:"John", 
-    surname:"Green",
-    color:"red",
-    resources: {
-        ore: 0,
-        wool: 0
-    }
-};
-console.log(player);
-console.log(player["name"]);
-console.log(player.resources.wool);
+// //object
+//  let player = {
+//     name:"John", 
+//     surname:"Green",
+//     color:"red",
+//     resources: {
+//         ore: 0,
+//         wool: 0
+//     }
+// };
+// console.log(player);
+// console.log(player["name"]);
+// console.log(player.resources.wool);
 
-let jsonArray = [
-    '{{repeat(5, 7)}}',
-    {
-      _id: '{{objectId()}}',
-      isActive: '{{bool()}}',
-      balance: '{{floating(1000, 4000, 2, "$0,0.00")}}',
-      age: '{{integer(20, 40)}}',
-      eyeColor: '{{random("blue", "brown", "green")}}',
-      name: '{{firstName()}} {{surname()}}',
-      gender: '{{gender()}}',
-      company: '{{company().toUpperCase()}}',
-      email: '{{email()}}',
-      phone: '+1 {{phone()}}',
-      friends: [
-        '{{repeat(3)}}',
-        {
-          id: '{{index()}}',
-          name: '{{firstName()}} {{surname()}}'
-        }
-      ],
-      favoriteFruit: function (tags) {
-        var fruits = ['apple', 'banana', 'strawberry'];
-        return fruits[tags.integer(0, fruits.length - 1)];
-      }
-    }
-  ];
+// let jsonArray = [
+//     '{{repeat(5, 7)}}',
+//     {
+//       _id: '{{objectId()}}',
+//       isActive: '{{bool()}}',
+//       balance: '{{floating(1000, 4000, 2, "$0,0.00")}}',
+//       age: '{{integer(20, 40)}}',
+//       eyeColor: '{{random("blue", "brown", "green")}}',
+//       name: '{{firstName()}} {{surname()}}',
+//       gender: '{{gender()}}',
+//       company: '{{company().toUpperCase()}}',
+//       email: '{{email()}}',
+//       phone: '+1 {{phone()}}',
+//       friends: [
+//         '{{repeat(3)}}',
+//         {
+//           id: '{{index()}}',
+//           name: '{{firstName()}} {{surname()}}'
+//         }
+//       ],
+//       favoriteFruit: function (tags) {
+//         var fruits = ['apple', 'banana', 'strawberry'];
+//         return fruits[tags.integer(0, fruits.length - 1)];
+//       }
+//     }
+//   ];
+
+
+//Fibonaci 1, 1,2,,3, 5, 8
+
+// let sum = 0;
+// for (i = 1; i < 101; i = i+sum) {
+//   sum = sum + i
+//   console.log( i )
+//   console.log(sum)
+// }
+
+// for (i = 1; i < 1001; i++) {
+//   if (i%3 == 0 && i%5!== 0) {
+//     console.log("Fizz = number " + i + " is divisible  by 3 and not by 5");
+//   } else if (i%5 == 0 && i%3!== 0) {
+//     console.log("Buzz = number " + i + " is divisible  by 5 and not by 3");
+//   } else if (i%3 == 0 && i%5 == 0) {
+//     console.log("FizzBuzz = number " + i + " is divisible  by 5 and 3");
+//   } else {
+//     console.log("Nothing = number " + i + " is not divisible  by 5 nor 3");
+//   }
+// }
+
+console.log(sum(2,2));
+
+function sum (number1, number2) {
+  return number1 - number2;
+}
+
+function sum (number1, number2, number3) {
+  return number1 + number2+ number3;
+}
+
+function sum (number1, number2) {
+  return number1 + number2;
+}
+
+function multiply (num1, num2) {
+  console.log(num1 * num2);
+  return num1 * num2;
+}
+
+multiply("aa","bb");
+
+
+
+
+
+
+
+
+
 
 
 
