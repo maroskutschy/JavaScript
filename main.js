@@ -120,7 +120,7 @@ Victory points: ${playerVictoryPoints}
 
 
 
-let pets = ['dog', 'cat'];
+// let pets = ['dog', 'cat'];
 
 // getDicesRoll();
 
@@ -153,14 +153,14 @@ let pets = ['dog', 'cat'];
  
 //  }
 
- let myArray = ["a", "b", "c", "d" ];
- myArray.push("d");
- myArray.pop();
- myArray.slice(1,2);
- myArray.indexOf("a");
- for (let i = 0; i < myArray.length; i++) {
-     console.log(myArray[i]);
- }
+//  let myArray = ["a", "b", "c", "d" ];
+//  myArray.push("d");
+//  myArray.pop();
+//  myArray.slice(1,2);
+//  myArray.indexOf("a");
+//  for (let i = 0; i < myArray.length; i++) {
+//      console.log(myArray[i]);
+//  }
 // //object
 //  let player = {
 //     name:"John", 
@@ -224,26 +224,126 @@ let pets = ['dog', 'cat'];
 //   }
 // }
 
-console.log(sum(2,2));
+// console.log(sum(2,2));
 
-function sum (number1, number2) {
-  return number1 - number2;
+// function sum (number1, number2) {
+//   return number1 - number2;
+// }
+
+// function sum (number1, number2, number3) {
+//   return number1 + number2+ number3;
+// }
+
+// function sum (number1, number2) {
+//   return number1 + number2;
+// }
+
+// function multiply (num1, num2) {
+//   console.log(num1 * num2);
+//   return num1 * num2;
+// }
+
+// multiply("aa","bb");
+
+let Player = {
+
+  PlayerInfo: {
+  playerName : 'Maros',
+  playerColour : 'blue',
+  playerInitiative : 2,
+  isActive : true,
+  harbours : [],
+  victoryPoints : 2,
+  },
+
+  Resources: {
+    wood : 0,
+    clay : 0,
+    sheep : 0,
+    ore : 0,
+    grain : 0,
+  },
+
+  AvailableStructures: {
+    cities: 4,
+    roads: 15,
+    settlements: 5
+  },
+
+  DevelopmentCards : {
+    Card : {
+      cardType : 'Monopoly',
+      cardQty: 2,
+    },
+    usedCards: [],
+
+  },
+
+  SpecialCards : {
+    longestRoadCard : true,
+    largestArmyCard: false
+  },
+
+  Constructions : {
+    cities: 0,
+    roads: 0,
+    settlements: 0,
+  },
+
+  buildStructure: function (structureName){},
+  trade: function(resourceOffered, resourceDesired){},
+  acceptDeal: function(offer) {},
+  createOffer: function(offer) {},
+  useDevelopmentCard: function (cardName) {},
+  rollDices: function(){}
 }
 
-function sum (number1, number2, number3) {
-  return number1 + number2+ number3;
+
+let Board = {
+
+  Tiles : {
+    forest : 4,
+    pasture : 4,
+    field : 4,
+    mountain : 3,
+    hill : 3,
+    desert : 1
+   },
+
+  activePlayer : 'Maros',
+
+  createBoard: function (){},
+  distributeGoods: function (){},
+  nextPlayer: function (){},
+
 }
 
-function sum (number1, number2) {
-  return number1 + number2;
+// console.log(Player);
+// console.log(Board);
+console.log(Player.PlayerInfo.playerName);
+
+function addResources (playerName, wood, clay, sheep, ore, grain) {
+  if (Player.PlayerInfo.playerName === playerName) {
+    Player.Resources.wood = Player.Resources.wood + wood;
+    Player.Resources.clay = Player.Resources.clay + clay;
+    Player.Resources.sheep = Player.Resources.sheep + sheep;
+    Player.Resources.ore = Player.Resources.ore + ore;
+    Player.Resources.grain = Player.Resources.grain + grain;
+  }
 }
 
-function multiply (num1, num2) {
-  console.log(num1 * num2);
-  return num1 * num2;
-}
+// console.log('resources before add :' , Player.Resources);
+// addResources ('Maros', 1, 1, 1, 1,1);
+// console.log('resources after add :' , Player.Resources);
 
-multiply("aa","bb");
+console.log('resources before add :' , Player.Resources);
+for (resource in Player.Resources) {
+  Player.Resources[resource] = Player.Resources[resource] + 5;
+  console.log(resource);
+}
+console.log('resources after add :' , Player.Resources);
+
+
 
 
 
