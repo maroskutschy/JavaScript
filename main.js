@@ -318,30 +318,163 @@ let Board = {
 
 }
 
+let Player2 = {
+
+  PlayerInfo: {
+  playerName : 'Maros2',
+  playerColour : 'blue',
+  playerInitiative : 2,
+  isActive : true,
+  harbours : [],
+  victoryPoints : 2,
+  },
+
+  Resources: {
+    wood : 0,
+    clay : 0,
+    sheep : 0,
+    ore : 0,
+    grain : 0,
+  },
+
+  AvailableStructures: {
+    cities: 4,
+    roads: 15,
+    settlements: 5
+  },
+
+  DevelopmentCards : {
+    Card : {
+      cardType : 'Monopoly',
+      cardQty: 2,
+    },
+    usedCards: [],
+
+  },
+
+  SpecialCards : {
+    longestRoadCard : true,
+    largestArmyCard: false
+  },
+
+  Constructions : {
+    cities: 0,
+    roads: 0,
+    settlements: 0,
+  },
+
+  buildStructure: function (structureName){},
+  trade: function(resourceOffered, resourceDesired){},
+  acceptDeal: function(offer) {},
+  createOffer: function(offer) {},
+  useDevelopmentCard: function (cardName) {},
+  rollDices: function(){}
+}
+
+
+
+
+
 // console.log(Player);
 // console.log(Board);
 console.log(Player.PlayerInfo.playerName);
 
-function addResources (playerName, wood, clay, sheep, ore, grain) {
-  if (Player.PlayerInfo.playerName === playerName) {
-    Player.Resources.wood = Player.Resources.wood + wood;
-    Player.Resources.clay = Player.Resources.clay + clay;
-    Player.Resources.sheep = Player.Resources.sheep + sheep;
-    Player.Resources.ore = Player.Resources.ore + ore;
-    Player.Resources.grain = Player.Resources.grain + grain;
-  }
+function addResources (player, resources) {
+ 
+    // player.Resources.wood = player.Resources.wood + resources.wood;
+    // player.Resources.clay = player.Resources.clay + resources.clay;
+    // player.Resources.sheep = player.Resources.sheep + resources.sheep;
+    // player.Resources.ore = player.Resources.ore + resources.ore;
+    // player.Resources.grain = player.Resources.grain + resources.grain;
+
+    for (key in resources) {
+      player.Resources[key] +=  resources[key];
+    }
+ 
 }
 
 // console.log('resources before add :' , Player.Resources);
 // addResources ('Maros', 1, 1, 1, 1,1);
 // console.log('resources after add :' , Player.Resources);
 
-console.log('resources before add :' , Player.Resources);
-for (resource in Player.Resources) {
-  Player.Resources[resource] = Player.Resources[resource] + 5;
-  console.log(resource);
+// console.log('resources before add :' , Player.Resources);
+// for (resource in Player.Resources) {
+//   Player.Resources[resource] = Player.Resources[resource] + 5;
+//   console.log(resource);
+// }
+// console.log('resources after add :' , Player.Resources);
+
+function removeResources (player, resources) {
+  
+    player.Resources.wood = player.Resources.wood - resources.wood;
+    player.Resources.clay = player.Resources.clay - resources.clay;
+    player.Resources.sheep = player.Resources.sheep - resources.sheep;
+    player.Resources.ore = player.Resources.ore - resources.ore;
+    player.Resources.grain = player.Resources.grain - resources.grain;
+    if (player.Resources.wood < 0 ) {
+      player.Resources.wood = 0;
+    }
+    if (player.Resources.wood < 0 ) {
+      player.Resources.wood = 0;
+    }
+    if (player.Resources.clay < 0 ) {
+      player.Resources.clay = 0;
+    }
+    if (player.Resources.sheep < 0 ) {
+      player.Resources.sheep = 0;
+    }
+    if (player.Resources.ore < 0 ) {
+      player.Resources.ore = 0;
+    }
+    if (player.Resources.grain < 0 ) {
+      player.Resources.grain = 0;
+    }
+  
 }
-console.log('resources after add :' , Player.Resources);
+
+// console.log('resources before add :' , Player.Resources);
+// addResources ('Maros', 10, 10, 10, 10, 10);
+// console.log('resources after add :' , Player.Resources);
+// removeResources ('Maros', 5, 5, 5, 5, 5);
+// console.log('resources after remove 1 :' , Player.Resources);
+// removeResources ('Maros', 12, 12, 12, 12, 12);
+// console.log('resources after remove 2 :' , Player.Resources);
+
+
+// console.log('resources before add :' , Player2.Resources);
+// addResources (Player2, 10, 10, 10, 10, 10);
+// console.log('resources after add :' , Player2.Resources);
+// removeResources (Player2, 5, 5, 5, 5, 5);
+// console.log('resources after remove 1 :' , Player2.Resources);
+// removeResources (Player2, 12, 12, 12, 12, 12);
+// console.log('resources after remove 2 :' , Player2.Resources);
+
+console.log('resources before add :' , Player2.Resources);
+addResources (Player2, {wood: 10, clay: 10, sheep: 10, ore: 10, grain: 10});
+console.log('resources after add :' , Player2.Resources);
+removeResources (Player2, {wood: 5, clay: 5, sheep: 5, ore: 5, grain: 5});
+console.log('resources after remove 1 :' , Player2.Resources);
+removeResources (Player2, {wood: 12, clay: 12, sheep: 12, ore: 12, grain: 12});
+console.log('resources after remove 2 :' , Player2.Resources);
+
+for (key in Player2.Resources) {
+  console.log(key, Player2.Resources[key]);
+}
+
+let isAdult;
+let age;
+// if (age > 16) {
+//   isAdult = true;
+// } else {
+//   isAdult = false;
+// }
+
+isAdult = age > 16 ? true : false;
+
+console.log(isAdult);
+console.log(true + true);
+console.log(true);
+
 
 
 
