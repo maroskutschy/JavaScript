@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    
+</head>
+<body>
+
+    <h1>My Slider</h1>
+    <div id="slider">
+        <!-- <img class='image1' src="Pictures/JS1.png" alt="image1" id="image1"> -->
+        <img class='image' src="Pictures/JS1.png" alt="image" id="image" number=>
+        <!-- <img class='image3' src="Pictures/JS4.jpeg" alt="image3" id="image3"> -->
+    </div>
+
+    <button id="previousImage" onclick="changePicture('down')">Previous</button>
+    <button id="nextImage" onclick="changePicture('down')">Next</button>
+
+    <script>
+
+         
+
+
+        // function nextImage() {
+        //     currentNum = currentNum === 4 ? 1 : currentNum + 1;
+        //     showImage(currentNum);
+        // }
+
+        // function previousImage() {
+        //     currentNum = currentNum === 1 ? 4 : currentNum - 1;
+        //     showImage(currentNum);
+        // }
+
+
+
+
+        console.log('My Slider.');
+        let elSlider1 = document.querySelectorAll('.image');
+        // let elSlider2 = document.querySelectorAll('.image3');
+        // elSlider1[0].style.border = 'solid 4px red';
+        // elSlider2[0].style.border = 'solid 4px blue';
+
+        // function changePicture (number) {
+        //     elSlider1[0].src = 'Pictures/JS' + number +  '.png';
+        // }
+
+        let currentNum = 1;
+
+        function changePicture (upOrDown) {
+            let number;
+            if (upOrDown === 'up') {
+                number = number + currentNum;
+                elSlider1[0].src = 'Pictures/JS' + number +  '.png';
+                if (number === 0) {
+                    elSlider1[0].src = 'Pictures/JS' + 4 +  '.png';  
+                }
+            } else {
+                number = number - currentNum;
+                elSlider1[0].src = 'Pictures/JS' + number +  '.png';
+                if (number === 5) {
+                    elSlider1[0].src = 'Pictures/JS' + 1 +  '.png';  
+                }
+             }    
+        }
+
+        // changePicture(2);
+
+    </script>
+
+
+        
+</body>
+</html>
