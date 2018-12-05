@@ -18,8 +18,11 @@
         <!-- <img class='image3' src="Pictures/JS4.jpeg" alt="image3" id="image3"> -->
     </div>
 
-    <button id="previousImage" onclick="changePicture('down')">Previous</button>
-    <button id="nextImage" onclick="changePicture('down')">Next</button>
+    <!-- <button id="previousImage" onclick="changePicture('down')">Previous</button>
+    <button id="nextImage" onclick="changePicture('up')">Next</button> -->
+
+    <button id="previousImage" >Previous</button>
+    <button id="nextImage" >Next</button>
 
     <script>
 
@@ -36,11 +39,8 @@
         //     showImage(currentNum);
         // }
 
-
-
-
-        console.log('My Slider.');
-        let elSlider1 = document.querySelectorAll('.image');
+        // console.log('My Slider.');
+        
         // let elSlider2 = document.querySelectorAll('.image3');
         // elSlider1[0].style.border = 'solid 4px red';
         // elSlider2[0].style.border = 'solid 4px blue';
@@ -49,26 +49,42 @@
         //     elSlider1[0].src = 'Pictures/JS' + number +  '.png';
         // }
 
+        let elSlider1 = document.querySelectorAll('.image');
         let currentNum = 1;
+        let nextButton = document.querySelector('#nextImage');
+        let previousButton = document.querySelector('#previousImage');
+
+        nextButton.addEventListener('click', function() {
+            changePicture('down')
+            }
+        );
+
+        previousButton.addEventListener('click', function() {
+            changePicture('up')
+            }
+        );
+        
 
         function changePicture (upOrDown) {
-            let number;
+            
             if (upOrDown === 'up') {
-                number = number + currentNum;
-                elSlider1[0].src = 'Pictures/JS' + number +  '.png';
-                if (number === 0) {
-                    elSlider1[0].src = 'Pictures/JS' + 4 +  '.png';  
+                currentNum++;
+                elSlider1[0].src = 'Pictures/JS' + currentNum +  '.png';
+                if (currentNum === 5) {
+                    elSlider1[0].src = 'Pictures/JS' + 1 +  '.png'; 
+                    currentNum = 1;
                 }
             } else {
-                number = number - currentNum;
-                elSlider1[0].src = 'Pictures/JS' + number +  '.png';
-                if (number === 5) {
-                    elSlider1[0].src = 'Pictures/JS' + 1 +  '.png';  
+                currentNum--;
+                elSlider1[0].src = 'Pictures/JS' + currentNum +  '.png';
+                if (currentNum === 0) {
+                    elSlider1[0].src = 'Pictures/JS' + 4 +  '.png';  
+                    currentNum = 4;
                 }
              }    
         }
 
-        // changePicture(2);
+
 
     </script>
 
